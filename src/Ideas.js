@@ -1,8 +1,22 @@
+import Card from './Card';
 import './Ideas.css'
 
-function Ideas({name}){
+function Ideas({ ideas }){
+    const ideasCards = ideas.map(idea => {
+        return (
+            <Card 
+                title={idea.title}
+                description={idea.description}
+                id={idea.id}
+                key={idea.id}
+            />
+        )
+    })
+
     return (
-        <h2>Hello, Mr. {name}</h2>
+        <div className='ideas-container'>
+            {ideaCards}
+        </div>
     )
 }
 
